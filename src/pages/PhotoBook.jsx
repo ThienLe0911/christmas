@@ -38,6 +38,23 @@ function PhotoBook() {
   const [currentPage, setCurrentPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
   const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [bookSize, setBookSize] = useState({
+    width: 550,
+    height: Math.max(750, window.innerHeight * 0.7)
+  });
+
+  // Cập nhật kích thước khi resize
+  useEffect(() => {
+    const handleResize = () => {
+      setBookSize({
+        width: 550,
+        height: Math.max(750, window.innerHeight * 0.7)
+      });
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Dữ liệu cho các trang sách với hình ảnh thật
   const pages = [
@@ -75,7 +92,7 @@ function PhotoBook() {
     },
     {
       image: img9,
-      text: "Mãi bên nhau em nhé! 💕",
+      text: "Mãi bên nhau em nhé!",
     },
   ];
 
@@ -128,13 +145,13 @@ function PhotoBook() {
       <div className="flipbook-wrapper">
         <HTMLFlipBook
           ref={book}
-          width={450}
-          height={600}
+          width={bookSize.width}
+          height={bookSize.height}
           size="stretch"
-          minWidth={315}
-          maxWidth={1000}
-          minHeight={400}
-          maxHeight={1533}
+          minWidth={400}
+          maxWidth={1200}
+          minHeight={500}
+          maxHeight={2000}
           maxShadowOpacity={0.5}
           showCover={true}
           mobileScrollSupport={true}
