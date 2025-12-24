@@ -2,6 +2,17 @@ import { useRef, useEffect, useState, forwardRef } from 'react';
 import HTMLFlipBook from 'react-pageflip';
 import './PhotoBook.css';
 
+// Import images
+import img1 from '../assets/images/1.JPG';
+import img2 from '../assets/images/IMG_5725.jpg';
+import img3 from '../assets/images/IMG_6454.jpg';
+import img4 from '../assets/images/IMG_8048.jpg';
+import img5 from '../assets/images/IMG_8054.jpg';
+import img6 from '../assets/images/IMG_8207.jpg';
+import img7 from '../assets/images/IMG_8552.jpg';
+import img8 from '../assets/images/thaocamvien.PNG';
+import img9 from '../assets/images/vanluontuoisang.jpg';
+
 // Component cho mỗi trang sách
 const Page = forwardRef(({ pageNumber, image, text }, ref) => {
   return (
@@ -28,31 +39,43 @@ function PhotoBook() {
   const [totalPages, setTotalPages] = useState(0);
   const [imagesLoaded, setImagesLoaded] = useState(false);
 
-  // Dữ liệu demo cho các trang sách
+  // Dữ liệu cho các trang sách với hình ảnh thật
   const pages = [
     {
-      image: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800&q=80',
+      image: img1,
       text: 'Khoảnh khắc đầu tiên chúng ta gặp nhau...'
     },
     {
-      image: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=800&q=80',
+      image: img2,
       text: 'Những ngày bên nhau thật tuyệt vời'
     },
     {
-      image: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&q=80',
+      image: img3,
       text: 'Em luôn làm anh mở miệng cười'
     },
     {
-      image: 'https://images.unsplash.com/photo-1495107334309-fcf20504a5ab?w=800&q=80',
+      image: img4,
       text: 'Mỗi khoảnh khắc bên em đều là quý giá'
     },
     {
-      image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80',
+      image: img5,
       text: 'Cảm ơn em đã luôn ở bên anh'
     },
     {
-      image: 'https://images.unsplash.com/photo-1513885535751-8b9238bd345a?w=800&q=80',
+      image: img6,
       text: 'Anh yêu em rất nhiều! ❤️'
+    },
+    {
+      image: img7,
+      text: 'Mỗi ngày bên em là một món quà'
+    },
+    {
+      image: img8,
+      text: 'Kỷ niệm đẹp của chúng mình'
+    },
+    {
+      image: img9,
+      text: 'Mãi bên nhau em nhé! 💕'
     }
   ];
 
