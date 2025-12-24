@@ -141,12 +141,11 @@
   }
 
   .page-image {
-    max-width: 280px;
-    height: 320px;
+    max-height: 65%;
   }
 
   .page-text {
-    font-size: 1em;
+    font-size: 1.1em;
   }
 
   .nav-button {
@@ -173,13 +172,11 @@
   }
 
   .page-image {
-    max-width: 220px;
-    height: 260px;
+    max-height: 70%;
   }
 
   .page-text {
-    font-size: 0.9em;
-    padding: 0 10px;
+    font-size: 1em;
   }
 }
 

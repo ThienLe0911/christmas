@@ -40,15 +40,17 @@ function PhotoBook() {
   const [imagesLoaded, setImagesLoaded] = useState(false);
   const [bookSize, setBookSize] = useState({
     width: 550,
-    height: Math.max(750, window.innerHeight * 0.7)
+    height: Math.max(750, window.innerHeight * (window.innerWidth <= 768 ? 0.8 : 0.7))
   });
 
   // Cập nhật kích thước khi resize
   useEffect(() => {
     const handleResize = () => {
+      const isMobile = window.innerWidth <= 768;
+      const heightPercentage = isMobile ? 0.8 : 0.7;
       setBookSize({
         width: 550,
-        height: Math.max(750, window.innerHeight * 0.7)
+        height: Math.max(750, window.innerHeight * heightPercentage)
       });
     };
 
